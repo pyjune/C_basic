@@ -81,6 +81,31 @@ int main(int argc, char** argv)
 	else
 	{
 		printf("Low\n");
+	}
+	
+	// 40점이상  60점 미만인가?
+	if( score < 60 && score >= 40 )
+	{
+		printf("OK\n");
+	}
+	
+	// 0점 미만이거나 100점을 초과하면
+	if( score < 0 || score > 100 )
+	{
+		printf("Error\n");
 	} 
+	else
+	{
+		// 등급표시.. 
+	}
+	// 점수비교..
+	if( score>=0 && score<=100)
+	{
+		// 등급표시..
+	}
+	else
+	{
+		printf("Error\n");	
+	}
 	return 0;
 }
