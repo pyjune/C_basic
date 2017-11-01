@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+extern int gVar1;
+
+void f_change_gVar1(int n)
+{
+	gVar1 = n;
+}
+
+
 // 인자도 없고 리턴값도 없는 경우..
 void f1(void)
 {
