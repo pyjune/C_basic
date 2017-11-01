@@ -11,5 +11,7 @@ int f3(void);
 int f4(int n); 
 // 전역변수 gVar1을 바꾸는 함수.. 
 void f_change_gVar1(int n);
+// 함수 호출횟수 출력 
+void f_count(void);
 
 #endif // __FUNCTION_H__
