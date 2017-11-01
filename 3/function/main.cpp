@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "function.h"
 
+//static int gVar1;
 int gVar1;		// 함수끼리 혹은 파일끼리 공유하는 경우 
 int gVar2 = 10;
 int gVar3;
@@ -10,6 +11,12 @@ void change_gVar1(int n);
 int main(void) 
 {
 	int n = 100;
+	
+	f_count();
+	f_count();
+	f_count();
+	f_count();
+	f_count();
 	
 	gVar1 = 10;
 	printf("gVar1 = %d\n", gVar1); 
