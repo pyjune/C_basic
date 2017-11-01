@@ -9,6 +9,7 @@ void f2(int n);
 int f3(void);
 // 인자도 있고 리턴값도 있는 경우..
 int f4(int n); 
-
+// 전역변수 gVar1을 바꾸는 함수.. 
+void f_change_gVar1(int n);
 
 #endif // __FUNCTION_H__
