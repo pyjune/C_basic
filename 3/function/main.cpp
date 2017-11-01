@@ -11,9 +11,14 @@ int main(void)
 {
 	int n = 100;
 	
+	gVar1 = 10;
 	printf("gVar1 = %d\n", gVar1); 
 	printf("gVar2 = %d\n", gVar2);
+	
 	change_gVar1(100);
+	printf("gVar1 = %d\n", gVar1);
+	
+	f_change_gVar1(300);
 	printf("gVar1 = %d\n", gVar1);
 	
 	f1();
@@ -33,4 +38,3 @@ void change_gVar1(int n)
 {
 	gVar1 = n;
 }
-
