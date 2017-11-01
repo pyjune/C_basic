@@ -1,7 +1,14 @@
 #include <stdio.h>
 
+//int gVar1; //static int gVar1;
 extern int gVar1;
 
+void f_count(void)
+{
+	static int cnt; // 전역 영역에 생성되므로 0으로 초기화됨..
+	cnt++;
+	printf("cnt = %d\n", cnt); 
+}
 void f_change_gVar1(int n)
 {
 	gVar1 = n;
