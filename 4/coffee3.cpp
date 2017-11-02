@@ -1,6 +1,7 @@
 /*
+	coffee3 : 함수로 분리 
+	coffee2 : 메뉴 누적 선택 가능
 	coffee1 : 메뉴이름 추가
-	coffee2 : 메뉴 누적 선택 가능 
 */
 
 #include <stdio.h>
@@ -18,6 +19,7 @@ int cash[] = {0, 10000, 5000, 1000};
 void menu_print(void); 
 int menu_select(void);
 int menu_pay(int priceTotal);
+void menu_change(int priceTotal, int payTotal);
 
 int main(void) 
 {
@@ -32,14 +34,19 @@ int main(void)
 
 	// 음료 선택
 	int priceTotal = menu_select();
-
+	
 	// 지불액 선택
+	int payTotal = menu_pay(priceTotal);
 	
 	// 거스름 계산 
-	
-	printf("거스름은 %d원 입니다.\n", payTotal-priceTotal);
+	menu_change(priceTotal, payTotal);
 	
 	return 0;
+}
+
+void menu_change(int priceTotal, int payTotal)
+{
+	printf("거스름은 %d원 입니다.\n", payTotal-priceTotal);
 }
 
 int menu_pay(int priceTotal)
