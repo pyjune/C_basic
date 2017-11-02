@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int price[] = {0, 1500, 2000, 2500, 3000, 3500, 4000, 4500};
+char menu[][11] = {"","Americano", "Latte", "Mocha", "Cappuccino"};
+int menuN = sizeof(menu)/sizeof(menu[0])-1;
+int price[] = {0, 1500, 2000, 2500, 3000};
 // 배열요소의 개수를 자동으로 계산
 int priceN = sizeof(price)/sizeof(price[0])-1;  
 //int priceN = 5;
@@ -20,7 +21,7 @@ int main(void)
 	//for(int i = 1; i<=3; i++) // 배열이 바뀌면 수정필요 
 	for(int i = 1; i<=priceN; i++) // priceN만 main()밖에서 수정 
 	{
-		printf("%d. %d원\n", i, price[i]);
+		printf("%d.%-12s %4d원\n", i, menu[i], price[i]);
 	}
 	/*
 	printf("1.1500원\n");
