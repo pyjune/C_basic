@@ -6,6 +6,7 @@ void f1(int * ptr);
 void f2(int data);
 void f3(int * ptr);
 void farr(const int pArr[]);
+void farr2(const int * pArr);
 
 int main(void) 
 {
@@ -15,6 +16,7 @@ int main(void)
 	int * pA;
 	
 	farr(arr);
+	farr2(arr);
 	printf("arr[0] = %d\n", arr[0]);
 	
 	pA = &a;
@@ -30,6 +32,12 @@ int main(void)
 	return 0;
 }
 
+void farr2(const int * pArr)
+{
+	for(int i=0; i<4; i++)
+		printf("pArr[%d] = %d\n", i, *(pArr+i));
+
+}
 void farr(const int pArr[])
 {
 	for(int i=0; i<4; i++)
