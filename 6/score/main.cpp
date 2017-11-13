@@ -28,7 +28,24 @@ int main(int argc, char** argv) {
 
 void print_sort(int N, ScoreType score[])
 {
-	
+	for(int i=0; i<=N-2; i++)
+	{
+		int maxIdx = i;
+		for(int j=i+1; j<N;j++)
+		{
+			if(score[maxIdx].avg<score[j].avg)
+				maxIdx = j;
+		}
+		ScoreType tmp = score[maxIdx];
+		score[maxIdx] = score[i];
+		score[i] = tmp;
+	}
+	for(int i=0; i<N; i++)
+	{
+		printf("%s %d %d %d %d %d %.2f\n", score[i].name, score[i].num, 
+					score[i].lang, score[i].eng, 
+					score[i].math, score[i].total, score[i].avg);
+	}
 }
 
 void find_1st(int N, ScoreType score[])
