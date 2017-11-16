@@ -8,8 +8,10 @@ int E;
 void dfs(int n);  // 탐색 
 void dfs2(int n, int k); // 경로의 수 찾기 
 void dfs3(int n, int k, int m);
+void dfs4(int n, int k, int m); // 최단 거리.. 
 int cnt;
 int path[6];
+int min;
 
 int main(int argc, char** argv) 
 {
@@ -25,9 +27,47 @@ int main(int argc, char** argv)
 	}
 	//dfs(1);
 	//dfs2(1, 4);
-	dfs3(1, 4, 0);
-	printf("%d\n", cnt);
+	//dfs3(1, 4, 0);
+	//printf("%d\n", cnt);
+	min =10;
+	dfs4(1, 4, 0);
+	printf("%d\n", min);
 	return 0;
+}
+
+void dfs4(int n, int k, int m) 
+{
+	if(n==k)
+	{
+		if(min>m)
+			min = m;
+		
+		for(int i=0; i<m; i++)
+		{
+			printf("%d ", path[i]);
+		}
+		printf("%d : %d\n", k, m);
+	}
+	else if( m>=min)
+	{
+		return;
+	}
+	else
+	{
+		
+		visited[n] = 1; // n번노드 방문 표시
+		path[m] = n;
+		//printf("%d ", n); 
+		for(int i=1; i<=V; i++)
+		{
+			if(adj[n][i]==1 && visited[i]==0)// 인접이고 방문하지 않은 노드면 
+			{
+				dfs4(i, k, m+1);
+			}
+		}
+		visited[n] = 0;
+	}
+	
 }
 void dfs3(int n, int k, int m) 
 {
